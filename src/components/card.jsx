@@ -1,7 +1,7 @@
  
 import { Link } from "react-router-dom";
-import useJob from "../hooks/context/useJob";
-import locationMarkIcon from "../assets/location.png";
+import useJob from "../hooks/context/useJob"; 
+import IconImage from "../common/iconImage";
 
 const  JobCard = ({ job }) =>{
   const { hasApplied } = useJob();
@@ -25,10 +25,10 @@ const  JobCard = ({ job }) =>{
         <div className="flex justify-between items-center text-sm text-gray-500">
 
           <div className="flex items-center">
-            <img
-              src={locationMarkIcon}
-              alt="location"
-              className="w-4 h-4 mr-1 opacity-70"
+            <IconImage
+            name={"location"}
+            alt={"location"}
+            cname={"w-4 h-4 mr-1 opacity-70"}
             />
             <span>{job.location}</span>
           </div>

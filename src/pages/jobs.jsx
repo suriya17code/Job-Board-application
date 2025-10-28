@@ -1,10 +1,8 @@
 
 import { Link, useParams } from "react-router-dom";
 import useJob from "../hooks/context/useJob";
-import { jobs } from "../constants/data";
-import locationIcon from "../assets/location.png"; 
-import backIcon from "../assets/back.png"; 
-import aiIcon from "../assets/ai.png"; 
+import { jobs } from "../constants/data"; 
+import IconImage from "../common/iconImage";
 
 const JobDetails = () => {
   const { id } = useParams();
@@ -33,11 +31,12 @@ const JobDetails = () => {
     <div className="container mx-auto px-4 py-8">
 {/* back to homepage */}
       <Link to="/" className="text-blue-600 hover:text-blue-800 mb-4 inline-flex items-center">
-         <img
-            src={backIcon}
-            alt="Location"
-            className="w-5 h-5 mr-2 object-contain"
-          />
+
+            <IconImage
+            name={"back"}
+            alt={"backIcon"}
+            cname={"w-4 h-4 mr-1 opacity-70"}
+            />
         Back to Jobs
       </Link>
 
@@ -54,21 +53,21 @@ const JobDetails = () => {
           </div>
             <span className=" flex w-69 align-middle items-center justify-between rounded-2xl bg-green-100 text-green-800 px-4 py-2   text-lg font-semibold">
             
-              <img
-            src={aiIcon}
-            alt="Location"
-            className="w-5 h-5 mr-2 object-fill"
-          />
+          <IconImage
+            name={"ai"}
+            alt={"aiIcon"}
+            cname={"w-4 h-4 mr-1 opacity-70"}
+            />
           {job.ai_match_score}% AI Match 
           </span> 
         
         </div>
         <div className="flex items-center text-gray-600 mb-6">
-          <img
-            src={locationIcon}
-            alt="Location"
-            className="w-5 h-5 mr-2 object-fill"
-          />
+         <IconImage
+            name={"location"}
+            alt={"location"}
+            cname={"w-4 h-4 mr-1 opacity-70"}
+            />
           <span className="text-lg">{job.location}</span>
         </div>
 

@@ -2,6 +2,7 @@ import JobCard from "../components/card";
 import { jobs } from "../constants/data";
 
 const Mainpage = () => {
+  
   return (
     <div className="p-6">
       <h1 className="text-2xl font-semibold mb-4">Recent Jobs</h1>
