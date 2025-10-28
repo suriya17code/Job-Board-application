@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useJob from "../hooks/context/useJob";
 import locationMarkIcon from "../assets/location.png";
 
-function JobCard({ job }) {
+const  JobCard = ({ job }) =>{
   const { hasApplied } = useJob();
   const applied = hasApplied(job.id);
 

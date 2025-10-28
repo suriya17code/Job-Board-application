@@ -4,7 +4,7 @@ import useJob from "../hooks/context/useJob";
 
 const Navbar = () => {
   
-  const { appliedJobs } = useJob();
+  const { appliedCount } = useJob();
 
   return (
     <nav className="bg-green-600 text-white p-4">
@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-2">
           <p className="text-sm">Applied Jobs:</p>
           <span className="bg-white text-green-700 px-2 py-1 rounded text-sm">
-            {appliedJobs.length}
+            {appliedCount.length}
           </span>
         </div>
       </div>

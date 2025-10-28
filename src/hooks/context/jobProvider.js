@@ -4,11 +4,12 @@ import { useNavigate } from 'react-router-dom';
 
 const JobProvider = ({ children }) => { 
   
-  const [appliedJobs, setAppliedJobs] = useState([]);
-  const navigate= useNavigate()
+  const [appliedCount, setappliedCount] = useState([]);
+  const navigate= useNavigate();
+
   const handleApplyToJob = (jobId) => {
-    if (!appliedJobs.includes(jobId)) {
-      setAppliedJobs((prev) => {
+    if (!appliedCount.includes(jobId)) {
+      setappliedCount((prev) => {
        return [...prev, jobId];
     });
        navigate("/")
@@ -16,11 +17,12 @@ const JobProvider = ({ children }) => {
   };
 
   const hasApplied = (jobId)=> {
-    return appliedJobs.includes(jobId)
+    const isAppied = appliedCount.includes(jobId);
+    return isAppied
 };
 
   const value = {
-    appliedJobs,
+    appliedCount,
     handleApplyToJob,
     hasApplied,
   };
