@@ -12,7 +12,9 @@ const JobProvider = ({ children }) => {
       setappliedCount((prev) => {
        return [...prev, jobId];
     });
+    setTimeout(() => {
        navigate("/")
+    }, 1000);
     }
   };
 

@@ -22,11 +22,15 @@ const JobDetails = () => {
 
   const applied = hasApplied(job.id);
 
+  const handleApplyJob=()=>{
+ 
+    handleApplyToJob(job.id);
+  
+  }
   return (
     <div className="container mx-auto px-4 py-8">
 {/* back to homepage */}
-      <Link to="/" className="text-blue-600 hover:text-blue-800 mb-4 inline-flex items-center"
-      >
+      <Link to="/" className="text-blue-600 hover:text-blue-800 mb-4 inline-flex items-center">
          <img
             src={backIcon}
             alt="Location"
@@ -69,7 +73,7 @@ const JobDetails = () => {
 
 {/* apply */}
         <button
-          onClick={() => handleApplyToJob(job.id)}
+          onClick={handleApplyJob}
           disabled={applied}
           className={`px-8 py-3 w-full rounded-lg font-semibold text-lg transition-all ${
             applied
