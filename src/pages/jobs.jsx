@@ -4,6 +4,7 @@ import useJob from "../hooks/context/useJob";
 import { jobs } from "../constants/data";
 import locationIcon from "../assets/location.png"; 
 import backIcon from "../assets/back.png"; 
+import aiIcon from "../assets/ai.png"; 
 
 const JobDetails = () => {
   const { id } = useParams();
@@ -13,7 +14,7 @@ const JobDetails = () => {
   if (!job) {
     return (
       <div className="container mx-auto px-4 py-8">
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3">
           Job not found
         </div>
       </div>
@@ -26,7 +27,8 @@ const JobDetails = () => {
  
     handleApplyToJob(job.id);
   
-  }
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
 {/* back to homepage */}
@@ -50,15 +52,22 @@ const JobDetails = () => {
               {job.company}
             </p>
           </div>
-          <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-lg font-semibold">
-            {job.ai_match_score}% AI Match
-          </span>
+            <span className=" flex w-69 align-middle items-center justify-between rounded-2xl bg-green-100 text-green-800 px-4 py-2   text-lg font-semibold">
+            
+              <img
+            src={aiIcon}
+            alt="Location"
+            className="w-5 h-5 mr-2 object-fill"
+          />
+          {job.ai_match_score}% AI Match 
+          </span> 
+        
         </div>
         <div className="flex items-center text-gray-600 mb-6">
           <img
             src={locationIcon}
             alt="Location"
-            className="w-5 h-5 mr-2 object-contain"
+            className="w-5 h-5 mr-2 object-fill"
           />
           <span className="text-lg">{job.location}</span>
         </div>
