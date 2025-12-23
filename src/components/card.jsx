@@ -27,7 +27,7 @@ const  JobCard = ({ job }) =>{
           <div className="flex items-center">
             <IconImage
             name={"location"}
-            alt={"location"}
+            alt={"location"} 
             cname={"w-4 h-4 mr-1 opacity-70"}
             />
             <span>{job.location}</span>
